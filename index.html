@@ -94,7 +94,14 @@
             position: relative;
             overflow: hidden;
         }
-
+.imagen-anillo {
+    width: 100%;
+    max-width: 430px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
         .carta {
             background: rgba(255,255,255,0.75);
             padding: 30px 25px;
@@ -202,56 +209,19 @@
 
     <!-- SEGUNDA PANTALLA -->
 
-    <section class="pantalla" id="segunda">
+<section class="pantalla" id="segunda">
 
-        <div class="contenido">
+<div class="contenido">
 
-            <h1>
-                Para ti ❤️
-            </h1>
+<img src="anillo.png" class="imagen-anillo">
 
-            <div class="carta">
+<button class="volver" onclick="volverInicio()">
+Volver ❤️
+</button>
 
-                Gracias por llegar a mi vida. ❤️
+</div>
 
-                <br><br>
-
-                Gracias por cada momento,
-                por cada sonrisa,
-                por cada conversación
-                y por todos esos pequeños detalles
-                que hacen que estar contigo
-                sea algo especial.
-
-                <br><br>
-
-                No sé qué nos tenga preparado
-                el futuro...
-
-                <br><br>
-
-                pero sí sé que quiero seguir
-                compartiendo muchos momentos
-                contigo.
-
-                <br><br>
-
-                ❤️
-
-                <div class="firma">
-                    Con todo mi amor,<br>
-                    Alex
-                </div>
-
-            </div>
-
-            <button class="volver" onclick="volverInicio()">
-                Volver ❤️
-            </button>
-
-        </div>
-
-    </section>
+</section>
 
 
     <script>
