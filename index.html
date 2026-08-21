@@ -167,7 +167,51 @@
             .carta {
                 font-size: 17px;
             }
-        }
+.contenido-anillo {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.imagen-anillo {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    cursor: pointer;
+    animation: aparecerAnillo 1.5s ease;
+}
+
+.texto-tocar {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #633d39;
+    animation: latido 1.5s infinite;
+}
+
+@keyframes aparecerAnillo {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes latido {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
+}
     </style>
 </head>
 
@@ -190,7 +234,7 @@
 
             <div class="polaroid">
 
-                <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80">
+                <img src="inicio.png">
 
             </div>
 
@@ -207,19 +251,22 @@
     </section>
 
 
-    <!-- SEGUNDA PANTALLA -->
-
+   <!-- SEGUNDA PANTALLA -->
 <section class="pantalla" id="segunda">
 
-<div class="contenido">
+    <div class="contenido-anillo">
 
-<img src="anillo.png" class="imagen-anillo">
+        <img 
+            src="anillo.png" 
+            class="imagen-anillo"
+            onclick="mostrarTercera()"
+        >
 
-<button class="volver" onclick="volverInicio()">
-Volver ❤️
-</button>
+        <p class="texto-tocar">
+            Toca la imagen ❤️
+        </p>
 
-</div>
+    </div>
 
 </section>
 
