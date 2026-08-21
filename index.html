@@ -3,125 +3,328 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Una sorpresa para ti ❤️</title>
+    <title>Para Alex & Sofi ❤️</title>
 
     <style>
         * {
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
+            background: #f8eadf;
+            color: #633d39;
+            font-family: Georgia, serif;
+            overflow-x: hidden;
+        }
+
+        .pantalla {
             min-height: 100vh;
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #f7eadf;
-            font-family: Georgia, serif;
-            color: #6b4038;
+            padding: 40px 20px;
+            text-align: center;
         }
 
-        .contenedor {
+        .contenido {
             width: 100%;
             max-width: 430px;
-            min-height: 100vh;
-            padding: 40px 25px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
 
         h1 {
-            font-size: 30px;
+            font-size: 32px;
+            line-height: 1.2;
             font-weight: normal;
             font-style: italic;
+            margin: 0 0 30px;
+        }
+
+        .subtitulo {
+            font-size: 17px;
             margin-bottom: 25px;
         }
 
-        .foto {
+        .polaroid {
             background: white;
-            padding: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            padding: 12px 12px 45px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             transform: rotate(-2deg);
-            margin-bottom: 35px;
+            margin: 0 auto 35px;
+            max-width: 360px;
         }
 
-        .foto img {
+        .polaroid img {
             width: 100%;
+            height: 350px;
+            object-fit: cover;
             display: block;
         }
 
-        .nombre {
-            font-size: 18px;
-            margin-bottom: 35px;
-        }
-
-        button {
-            border: none;
-            background: #a83d3d;
-            color: white;
-            padding: 18px 35px;
-            border-radius: 50px;
-            font-size: 18px;
-            font-family: Georgia, serif;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        button:hover {
-            transform: scale(1.05);
-        }
-
-        #mensaje {
-            display: none;
-            margin-top: 30px;
+        .nombres {
             font-size: 20px;
-            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .boton {
+            display: inline-block;
+            border: none;
+            background: #ad4141;
+            color: white;
+            padding: 17px 45px;
+            border-radius: 50px;
+            font-family: Georgia, serif;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            transform: scale(1.06);
+        }
+
+        #segunda {
+            display: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carta {
+            background: rgba(255,255,255,0.75);
+            padding: 30px 25px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.10);
+            line-height: 1.8;
+            font-size: 18px;
+            margin-top: 25px;
         }
 
         .corazon {
-            font-size: 35px;
-            margin-top: 20px;
+            position: fixed;
+            bottom: -50px;
+            font-size: 25px;
+            animation: subir 5s linear forwards;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        @keyframes subir {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .firma {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 20px;
+        }
+
+        .volver {
+            margin-top: 30px;
+            background: transparent;
+            color: #8f4545;
+            border: 1px solid #8f4545;
+            padding: 10px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: Georgia, serif;
+        }
+
+        @media (max-width: 500px) {
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .polaroid img {
+                height: 300px;
+            }
+
+            .carta {
+                font-size: 17px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="contenedor">
+    <!-- PRIMERA PANTALLA -->
 
-        <h1>Hay algo que quiero decirte...</h1>
+    <section class="pantalla" id="inicio">
 
-        <div class="foto">
-            <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80">
-        </div>
+        <div class="contenido">
 
-        <div class="nombre">
-            Alex & Sofi 
-        </div>
+            <h1>
+                Hay algo que quiero<br>
+                decirte...
+            </h1>
 
-        <button onclick="mostrarMensaje()">
-            Descúbrelo vida
-        </button>
-
-        <div id="mensaje">
-            Gracias por llegar a mi vida,<br>
-            por cada sonrisa<br>
-            y por estar a mi lado. ❤️
-
-            <div class="corazon">
-                ❤️
+            <div class="subtitulo">
+                Una pequeña sorpresa para ti ❤️
             </div>
+
+            <div class="polaroid">
+
+                <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80">
+
+            </div>
+
+            <div class="nombres">
+                Alex & Sofi ❤️
+            </div>
+
+            <button class="boton" onclick="abrirSorpresa()">
+                Descúbrelo ❤️
+            </button>
+
         </div>
 
-    </div>
+    </section>
+
+
+    <!-- SEGUNDA PANTALLA -->
+
+    <section class="pantalla" id="segunda">
+
+        <div class="contenido">
+
+            <h1>
+                Para ti ❤️
+            </h1>
+
+            <div class="carta">
+
+                Gracias por llegar a mi vida. ❤️
+
+                <br><br>
+
+                Gracias por cada momento,
+                por cada sonrisa,
+                por cada conversación
+                y por todos esos pequeños detalles
+                que hacen que estar contigo
+                sea algo especial.
+
+                <br><br>
+
+                No sé qué nos tenga preparado
+                el futuro...
+
+                <br><br>
+
+                pero sí sé que quiero seguir
+                compartiendo muchos momentos
+                contigo.
+
+                <br><br>
+
+                ❤️
+
+                <div class="firma">
+                    Con todo mi amor,<br>
+                    Alex
+                </div>
+
+            </div>
+
+            <button class="volver" onclick="volverInicio()">
+                Volver ❤️
+            </button>
+
+        </div>
+
+    </section>
+
 
     <script>
-        function mostrarMensaje() {
-            document.getElementById("mensaje").style.display = "block";
+
+        function abrirSorpresa() {
+
+            document.getElementById("inicio").style.display = "none";
+
+            document.getElementById("segunda").style.display = "flex";
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+            crearCorazones();
+
         }
+
+
+        function volverInicio() {
+
+            document.getElementById("segunda").style.display = "none";
+
+            document.getElementById("inicio").style.display = "flex";
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+
+        function crearCorazones() {
+
+            for (let i = 0; i < 25; i++) {
+
+                setTimeout(function() {
+
+                    const corazon = document.createElement("div");
+
+                    corazon.className = "corazon";
+
+                    corazon.innerHTML = "❤️";
+
+                    corazon.style.left =
+                        Math.random() * 100 + "vw";
+
+                    corazon.style.animationDuration =
+                        (3 + Math.random() * 4) + "s";
+
+                    corazon.style.fontSize =
+                        (18 + Math.random() * 25) + "px";
+
+                    document.body.appendChild(corazon);
+
+                    setTimeout(function() {
+
+                        corazon.remove();
+
+                    }, 7000);
+
+                }, i * 150);
+
+            }
+
+        }
+
     </script>
+
+</body>
+</html>
 
 </body>
 </html>
