@@ -297,7 +297,15 @@
 
         }
 
+function mostrarTercera() {
+    document.getElementById("segunda").style.display = "none";
+    document.getElementById("tercera").style.display = "flex";
 
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
         function volverInicio() {
 
             document.getElementById("segunda").style.display = "none";
